@@ -43,68 +43,32 @@
 </head>
 <body>
     <main>
-        <div height="10vh" style="display: flex; justify-content: end; align-items: center; height: 10vh; padding: 0px 48px;">
+        <div style="display: flex; justify-content: end; height: 1rem; padding: 0px 48px;">
             <label><span class="material-symbols-rounded">dark_mode</span><md-switch id="themeToggle"></md-switch></label>
         </div>
         <div style="margin: 0px 7.5vw;">
-            <div class="banner">
+            <div class="secondary-container">
                 <h5 class="md-typescale-headline-medium">Login to SFlightX App</h5>
+                <p class="md-typescale-body-large">To access most of our services, log in your SFlightX Account.</p>
             </div>
-            <div class="banner" id="full" style="display: flex; justify-content: center; height: 50vh;">
-                <div class="container" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 16px 24px;">
-                    <div>
-                        <p class="md-typescale-body-large">To access most of our services, log in your SFlightX Account.</p>
-                    </div>
-                    <div style="display: grid; grid-gap: 15px;">
-                        <md-outlined-button>
-                            <h4>Sign in using Email</h4>
-                        </md-outlined-button>
-                        <md-outlined-button>
-                            <h4>Sign in using Phone</h4>
-                        </md-outlined-button>
-                        <md-filled-tonal-button onclick="googleLogin()">
-                            <h4>Sign in with Google</h4>
-                        </md-filled-tonal-button>
-                    </div>
-                </div>
+            <div class="container" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 16px">
+                <div style="display: grid; grid-gap: 15px;">
+                    <md-outlined-button>
+                        <h4>Sign in using Email</h4>
+                    </md-outlined-button>
+                    <md-outlined-button>
+                        <h4>Sign in using Phone</h4>
+                    </md-outlined-button>
+                    <md-filled-tonal-button onclick="googleLogin()">
+                        <h4>Sign in with Google</h4>
+                    </md-filled-tonal-button>
+                 </div>
             </div>
         </div>
-        <div style="height: 25vh;"></div>
         <footer>
-            <div id="horizontal-footer">
-
-                <div id="footer-logo">
-                    <a href="https://sflightx.com"><img id="footer-logo" src="https://sflightx.com/resources/static/logo.png"
-                            alt="sFlightX Logo" /></a>
-                    <p class="md-typescale-body-medium">SFlightX is not affiliated with Spaceflight Simulator or Juno:
-                        New
-                        Origins. This website is not affiliated with Space Exploration Technologies (SpaceX).</p>
-                    <p class="md-typescale-body-medium">© 2021-2025 SFlightX. All rights reserved.</p>
-                </div>
-                <div id="legal-link">
-                    <div id="icon-link">
-                        <a href="https://x.com/SFlightXJNO"><img
-                                src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://youtube.com/@sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://facebook.com/sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://bsky.app/profile/sflightx.com"><img
-                                src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://simplerockets.com/u/sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                    </div>
-                    <div class="text-link">
-                        <a href="https://sflightx.com/legal/terms" target="_self">Terms of Service</a>
-                        <a href="https://sflightx.com/legal/privacy" target="_self">Privacy Policy</a>
-                    </div>
-                </div>
-
+            <div class="text-link">
+                <a href="https://sflightx.com/legal/terms" target="_self">Terms of Service</a>
+                <a href="https://sflightx.com/legal/privacy" target="_self">Privacy Policy</a>
             </div>
         </footer>
     </main>
