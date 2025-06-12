@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="version" content="1.4">
@@ -9,7 +10,7 @@
     <meta name="description"
         content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
     <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
-    <meta property="og:image" content="https://link.sflightx.com/s/logo" />
+    <meta property="og:image" content="https://sflightx.com/resources/static/logo.png" />
     <meta property="og:url" content="sflightx.com" />
 
     <meta name="twitter:card" content="summary" />
@@ -17,9 +18,9 @@
     <meta name="twitter:title" content="sFlightX" />
     <meta name="twitter:description"
         content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!" />
-    <meta name="twitter:image" content="https://link.sflightx.com/s/logo" />
+    <meta name="twitter:image" content="https://sflightx.com/resources/static/logo.png" />
     <title>SFlightX</title>
-    <link rel="icon" type="image/png" href="https://link.sflightx.com/s/logo">
+    <link rel="icon" type="image/png" href="https://sflightx.com/resources/static/logo.png">
 
     <script type="importmap">
     {
@@ -27,51 +28,220 @@
         "@material/web/": "https://esm.run/@material/web/"
       }
     }
-  </script>
+    </script>
     <script type="module">
         import '@material/web/all.js';
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
+    <style>
+        #login {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
-    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-dependency.css" />
+        #opt {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 16px;
+            width: 100%;
+        }
+
+        #login-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        #login-form>* {
+            width: 100%;
+        }
+
+        #cta {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        #action {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 8px;
+        }
+
+        #opt>* {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        [child] {
+            height: 100%;
+            flex: 1;
+        }
+
+        [child-priority] {
+            background-color: var(--md-sys-color-surface-container-high) !important;
+            flex: 2;
+        }
+
+        md-outlined-button,
+        md-filled-tonal-button {
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            /* spacing between icon and text */
+            --md-icon-size: 20px;
+            /* Optional: force consistent size */
+        }
+
+        md-outlined-button md-icon[slot="icon"],
+        md-filled-tonal-button md-icon[slot="icon"] {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 20px;
+            /* Match icon size if needed */
+            width: 20px;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        @media screen and (min-width: 768px) {
+            #login {
+                height: 40vh;
+                flex-direction: row;
+            }
+
+            #action {
+                flex-direction: row;
+            }
+
+        }
+    </style>
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/element/material-dependency.css" />
+
 </head>
+
 <body>
+    <header>
+        <div class="logo">
+            <a href="https://sflightx.com">
+                <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
+            </a>
+        </div>
+        <div style="display: flex; gap: 1rem;">
+            <label><span class="material-symbols-rounded">dark_mode</span><md-switch
+                    id="themeToggle"></md-switch></label>
+        </div>
+    </header>
     <main>
-        <div style="display: flex; justify-content: end; height: 1rem; padding: 0px 48px;">logo
-            <label><span class="material-symbols-rounded">dark_mode</span><md-switch id="themeToggle"></md-switch></label>
-        </div>
-        <div style="margin: 0px 5vw;">
-            <div class="secondary-container">
-                <h5 class="md-typescale-headline-medium" style="padding-bottom: 0">Login to SFlightX App</h5>
-                <p class="md-typescale-body-large">To access most of our services, log in your SFlightX Account.</p>
+        <div id="home" desktop-gap>
+            <div class="banner">
+                <h4 class="md-typescale-headline-large" indent="bottom">Login to SFlightX</h4>
             </div>
-            <div class="container" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 16px">
-                <div style="display: grid; grid-gap: 15px;">
-                    <md-outlined-button>
-                        <h4>Sign in using Email</h4>
-                    </md-outlined-button>
-                    <md-outlined-button>
-                        <h4>Sign in using Phone</h4>
-                    </md-outlined-button>
-                    <md-filled-tonal-button onclick="googleLogin()">
-                        <h4>Sign in with Google</h4>
+            <div id="login">
+                <div class="container" shape="rounded" child-priority indent="all">
+                    <div id="login-form" indent="all">
+                        <div>
+                            <h4 class="md-typescale-headline-small">Welcome!</h4>
+                            <p style="color: lightslategrey;" class="md-typescale-body-small">Enter your email or
+                                username. We will automatically create an account if you are new.<br><br>Currently, this feature is in development. Use your Google Account to proceed.</p>
+                        </div>
+                        <md-outlined-text-field id="uoe" label="Username / Email" type="email">
+                        </md-outlined-text-field>
+                        <md-outlined-text-field label="Password" type="password" id="passwordField">
+                            <md-icon-button toggle slot="trailing-icon" id="togglePasswordBtn">
+                                <span class="material-symbols-rounded">visibility_off</span>
+                                <span slot="selected" class="material-symbols-rounded">visibility</span>
+                            </md-icon-button>
+                        </md-outlined-text-field>
+                        <div id="cta" indent="vertical">
+                            <md-text-button>
+                                <h4>Forgot Password?</h4>
+                            </md-text-button>
+                            <md-filled-tonal-button disabled>
+                                <h4>Log In</h4>
+                            </md-filled-tonal-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="container" id="opt" shape="rounded" child indent="all">
+                    <p class="md-typescale-body-large" indent="vertical">No account yet?</p>
+                    <md-filled-tonal-button disabled>
+                        <h4>Sign up using Phone</h4>
                     </md-filled-tonal-button>
-                 </div>
+                    <md-filled-button onclick="googleLogin()">
+                        <h4>Sign up with Google</h4>
+                    </md-filled-button>
+                    <p style="color: lightslategrey;" class="md-typescale-body-small">Having trouble signing in? <a
+                            href="mailto:sflightx@gmail.com">Contact Us</a></p>
+                </div>
             </div>
         </div>
-        <footer>
-            <div class="text-link">
-                <a href="https://sflightx.com/legal/terms" target="_self">Terms of Service</a>
-                <a href="https://sflightx.com/legal/privacy" target="_self">Privacy Policy</a>
+        <div id="signup" desktop-gap>
+            <div indent="all">
+                <h4 class="md-typescale-headline-large">Create an account for...</h4>
+                <p id="account" style="color: var(--md-sys-color-primary);" class="md=md-typescale-body-large">n/a?</p>
             </div>
-        </footer>
+            <div indent="all" id="action">
+                <md-outlined-button onclick="
+                    history.back()">
+                    <h4>Go Back</h4>
+                </md-outlined-button>
+                <md-filled-button onclick="googleLogin()">
+                    <h4>Proceed</h4>
+                </md-filled-button>
+            </div>
+
+        </div>
+        <sflightx-footer></sflightx-footer>
     </main>
-    <script type="module" src="https://sflightx.com/resources/serviceAuth/initializeFirebase.js"></script>
-    <script type="module" src="https://sflightx.com/resources/auth/v2/googleAuth.js"></script>
-    <script src="https://sflightx.com/resources/function/scroll.js"></script>
-    <script src="https://sflightx.com/resources/function/theme-mode.js"></script>
-    <script src="https://sflightx.com/resources/data/main-navigation.js"></script>
+    <script type="module" src="https://sflightx.com/resources/v4/function/serviceAuth/initializeFirebase.js"></script>
+    <script type="module" src="https://sflightx.com/resources/v4/function/serviceAuth/googleAuth.js"></script>
+    <script type="module" src="https://sflightx.com/resources/v4/function/serviceAuth/autoAuth.js"></script>
+    <script src="https://sflightx.com/resources/v4/dependency.js"></script>
+    <script src="https://sflightx.com/resources/v4/data/drawer/primary.js"></script>
+    <script>
+        const passwordField = document.getElementById('passwordField');
+        const toggleBtn = document.getElementById('togglePasswordBtn');
+        toggleBtn.addEventListener('click', () => {
+            const input = passwordField.shadowRoot.querySelector('input');
+            if (input.type === 'password') {
+                input.type = 'text';
+            } else {
+                input.type = 'password';
+            }
+        });
+
+        function handleHashChange() {
+            const home = document.getElementById('home');
+            const signup = document.getElementById('signup');
+            if (location.hash === '#signup') {
+                home.style.display = 'none';
+                signup.style.display = 'block';
+            } else {
+                home.style.display = 'block';
+                signup.style.display = 'none';
+            }
+            const account = document.getElementById('account');
+            if (location.hash === '#signup') {
+                const email = document.getElementById('uoe').value;
+                account.textContent = (email ? email : 'sample@gmail.com') + '?';
+            }
+        }
+
+        handleHashChange();
+        window.addEventListener('hashchange', handleHashChange);
+    </script>
 </body>
 
 
